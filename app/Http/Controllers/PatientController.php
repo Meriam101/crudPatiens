@@ -37,7 +37,7 @@ public function show(Pation $patient){
  public function update(Request $request ,Pation $patient){
      $Formfields=$request->validate([
         'nom'=>'required',
-        'email'=>'required|email . $patient-|unique:pations,email,'>id,
+        'email'=>'required|email . $patient-|unique:pations,email,'.$patient->id,
         'telephone'=>'required',
     ]);
     $patient->update($Formfields);
